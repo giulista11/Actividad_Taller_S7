@@ -16,8 +16,12 @@ return password1 == password2
 
 
 
-document.getElementById("regBtn").addEventListener("click", function () {
-  let password1 = document.getElementById("password1").value;
-  return console.log(password1.length >= 6);
-});
+
+
+function comprobarLength {
+    let password1 = document.getElementById("password1").value;
+  return password1.length >= 6; 
+}
+
+
 
