@@ -10,7 +10,11 @@ function showAlertError() {
 const form = document.getElementById('regBtn');
 
 form.addEventListener('click', function() {
-  
+  if(camposVacios() && !comprobarPasswords() && !comprobarLength()){
+      showAlertError();
+  }else{
+      showAlertSuccess();
+  }
 });
 
 function camposVacios(){
@@ -29,16 +33,16 @@ function camposVacios(){
 function comprobarPasswords() {
     let password1 = document.getElementById('password1').value
     let password2 = document.getElementById('password2').value
-console.log(password1)
-console.log(password1 == password2)
-return password1 == password2
+
+
+return password1 == password2;
 }
 
 
 
 
 
-function comprobarLength {
+function comprobarLength (){
     let password1 = document.getElementById("password1").value;
   return password1.length >= 6; 
 }
