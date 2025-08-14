@@ -9,6 +9,10 @@ function showAlertError() {
 const form = document.getElementById('regBtn');
 
 form.addEventListener('click', function() {
+
+});
+
+function camposVacios(){
     let campos = document.getElementsByClassName("form-control");
     let hayVacio = false;
 
@@ -18,9 +22,5 @@ form.addEventListener('click', function() {
         }
     }
 
-    if (hayVacio) {
-        showAlertError();
-    } else {
-        showAlertSuccess();
-    }
-});
+    return hayVacio;
+}
