@@ -10,10 +10,15 @@ function showAlertError() {
 const form = document.getElementById('regBtn');
 
 form.addEventListener('click', function() {
-  if(camposVacios() && !comprobarPasswords() && !comprobarLength()){
-      showAlertError();
+    console.log(!camposVacios())
+    console.log(comprobarPasswords())
+    console.log(comprobarLength())
+    console.log(checkbox())
+    console.log(camposVacios() && !comprobarPasswords() && !comprobarLength())
+  if(!camposVacios() && comprobarPasswords() && comprobarLength() && checkbox()){
+      showAlertSuccess(); 
   }else{
-      showAlertSuccess();
+     showAlertError();
   }
 });
 
@@ -30,9 +35,12 @@ function camposVacios(){
     return hayVacio;
 }
 
+
 function comprobarPasswords() {
-    let password1 = document.getElementById('password1').value
-    let password2 = document.getElementById('password2').value
+    let password1 = 0
+    let password2 = 0
+    password1 = document.getElementById('password1').value
+    password2 = document.getElementById('password2').value
 
 
 return password1 == password2;
@@ -44,8 +52,12 @@ return password1 == password2;
 
 function comprobarLength (){
     let password1 = document.getElementById("password1").value;
-  return password1.length >= 6; 
+  return password1.length >= 6 && password1.length !== 0; 
 }
 
-
+function checkbox(){ 
+    
+       return document.getElementById('terminos').checked
+ 
+ }
 
